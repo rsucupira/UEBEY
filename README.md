@@ -19,16 +19,17 @@ Esta versão **não tem autenticação nem banco de dados real**. Páginas criad
 
 ## Publicar no Cloudflare Pages
 
-Este projeto é estático e não precisa de build.
+Este projeto é estático e não usa framework nem etapa real de compilação.
 
 Configuração sugerida:
 
 - Framework preset: `None`
-- Build command: deixar vazio
-- Build output directory: `/`
 - Production branch: `main`
+- Build command: `exit 0`
+- Build output directory: `.`
+- Root directory: manter o padrão (raiz do repositório)
 
-Depois de publicar, associe primeiro um domínio de teste ou o domínio principal quando estiver confortável.
+Depois do primeiro deploy, a Cloudflare fornecerá um endereço `*.pages.dev`. Teste nele antes de associar `uebey.com`.
 
 ## Próxima etapa — V1
 
