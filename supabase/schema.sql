@@ -35,7 +35,7 @@ create table if not exists public.pages (
   constraint pages_username_reserved check (
     username not in (
       'admin','api','app','assets','auth','blog','dashboard','edit','help',
-      'login','logout','pricing','privacy','signup','support','terms','uebey'
+      'login','logout','pricing','privacy','reset-password','signup','support','terms','uebey'
     )
   ),
   constraint pages_theme_check check (theme in ('minimal','dark','warm')),
@@ -64,7 +64,6 @@ create trigger on_auth_user_created_create_account
 after insert on auth.users
 for each row execute function public.handle_new_auth_user();
 
--- Backfill account records if Auth already contains users.
 insert into public.accounts (user_id)
 select id from auth.users
 on conflict (user_id) do nothing;
@@ -192,7 +191,7 @@ as $$
     and candidate ~ '^[a-z0-9]+([._-][a-z0-9]+)*$'
     and candidate not in (
       'admin','api','app','assets','auth','blog','dashboard','edit','help',
-      'login','logout','pricing','privacy','signup','support','terms','uebey'
+      'login','logout','pricing','privacy','reset-password','signup','support','terms','uebey'
     )
     and not exists (select 1 from public.pages p where p.username = candidate);
 $$;
