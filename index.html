@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="UEBEY — seu lugar na web. Crie uma página simples em poucos minutos." />
+  <title>UEBEY — Seu lugar na web</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="UEBEY Home">UEBEY</a>
+    <button id="nav-home" class="ghost-button" type="button">Início</button>
+  </header>
+
+  <main id="app" class="app-shell" aria-live="polite"></main>
+
+  <template id="home-template">
+    <section class="hero">
+      <p class="eyebrow">ONE DOMAIN. INFINITE IDEAS.</p>
+      <h1>Seu lugar na web.</h1>
+      <p class="hero-copy">Crie uma página pessoal simples, bonita e compartilhável. Sem precisar entender de sites.</p>
+
+      <form id="claim-form" class="claim-card">
+        <label for="claim-username">Escolha seu endereço</label>
+        <div class="claim-row">
+          <span class="prefix">uebey.com/</span>
+          <input id="claim-username" name="username" type="text" maxlength="30" autocomplete="off" placeholder="seunome" required />
+        </div>
+        <p id="claim-feedback" class="feedback" aria-live="polite"></p>
+        <button class="primary-button" type="submit">Criar minha página</button>
+      </form>
+
+      <div class="mini-proof">
+        <span>1 conta</span>
+        <span>1 endereço</span>
+        <span>1 página</span>
+      </div>
+    </section>
+  </template>
+
+  <template id="editor-template">
+    <section class="editor-wrap">
+      <div class="section-heading">
+        <p class="eyebrow">CRIE SUA PÁGINA</p>
+        <h1 id="editor-address"></h1>
+        <p>Preencha só o essencial. Você poderá editar depois.</p>
+      </div>
+
+      <form id="profile-form" class="editor-card">
+        <div class="field-grid">
+          <label>Nome
+            <input name="name" maxlength="60" required placeholder="Seu nome ou projeto" />
+          </label>
+          <label>Título
+            <input name="headline" maxlength="80" placeholder="Ex.: Fotógrafa, professor, designer..." />
+          </label>
+        </div>
+
+        <label>Bio
+          <textarea name="bio" rows="4" maxlength="280" placeholder="Conte rapidamente quem você é e o que faz."></textarea>
+        </label>
+
+        <div class="field-grid">
+          <label>Instagram
+            <input name="instagram" placeholder="https://instagram.com/..." />
+          </label>
+          <label>WhatsApp
+            <input name="whatsapp" placeholder="5531999999999" />
+          </label>
+          <label>LinkedIn
+            <input name="linkedin" placeholder="https://linkedin.com/in/..." />
+          </label>
+          <label>GitHub / Site
+            <input name="website" placeholder="https://..." />
+          </label>
+        </div>
+
+        <fieldset class="theme-picker">
+          <legend>Estilo</legend>
+          <label><input type="radio" name="theme" value="minimal" checked /> Minimal</label>
+          <label><input type="radio" name="theme" value="dark" /> Dark</label>
+          <label><input type="radio" name="theme" value="warm" /> Warm</label>
+        </fieldset>
+
+        <button class="primary-button" type="submit">Publicar página</button>
+      </form>
+    </section>
+  </template>
+
+  <template id="profile-template">
+    <section class="profile-page">
+      <article class="profile-card">
+        <div class="avatar" id="profile-avatar" aria-hidden="true"></div>
+        <p class="profile-handle" id="profile-handle"></p>
+        <h1 id="profile-name"></h1>
+        <p class="profile-headline" id="profile-headline"></p>
+        <p class="profile-bio" id="profile-bio"></p>
+        <div id="profile-links" class="profile-links"></div>
+      </article>
+      <a class="powered" href="/">Create your page on <strong>UEBEY</strong></a>
+    </section>
+  </template>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>
