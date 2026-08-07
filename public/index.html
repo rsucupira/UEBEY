@@ -10,7 +10,10 @@
 <body>
   <header class="topbar">
     <a class="brand" href="/" aria-label="UEBEY Home">UEBEY</a>
-    <button id="nav-home" class="ghost-button" type="button">Início</button>
+    <div class="nav-actions">
+      <button id="nav-home" class="ghost-button" type="button">Início</button>
+      <button id="nav-account" class="ghost-button" type="button">Entrar</button>
+    </div>
   </header>
 
   <main id="app" class="app-shell" aria-live="polite"></main>
@@ -36,6 +39,39 @@
         <span>1 endereço</span>
         <span>1 página</span>
       </div>
+    </section>
+  </template>
+
+  <template id="auth-template">
+    <section class="editor-wrap narrow-wrap">
+      <div class="section-heading">
+        <p class="eyebrow" id="auth-eyebrow">SUA CONTA UEBEY</p>
+        <h1 id="auth-title">Entrar</h1>
+        <p id="auth-copy">Acesse sua página e edite quando quiser.</p>
+      </div>
+
+      <form id="auth-form" class="editor-card auth-card">
+        <label>Email
+          <input name="email" type="email" autocomplete="email" required placeholder="voce@email.com" />
+        </label>
+        <label>Senha
+          <input name="password" type="password" minlength="6" autocomplete="current-password" required placeholder="Mínimo 6 caracteres" />
+        </label>
+        <p id="auth-feedback" class="feedback" aria-live="polite"></p>
+        <button id="auth-submit" class="primary-button" type="submit">Entrar</button>
+        <button id="auth-switch" class="text-button" type="button">Ainda não tenho conta</button>
+      </form>
+    </section>
+  </template>
+
+  <template id="dashboard-template">
+    <section class="editor-wrap narrow-wrap">
+      <div class="section-heading">
+        <p class="eyebrow">MINHA UEBEY</p>
+        <h1>Dashboard</h1>
+        <p id="dashboard-email"></p>
+      </div>
+      <article id="dashboard-card" class="editor-card dashboard-card"></article>
     </section>
   </template>
 
@@ -83,7 +119,8 @@
           <label><input type="radio" name="theme" value="warm" /> Warm</label>
         </fieldset>
 
-        <button class="primary-button" type="submit">Publicar página</button>
+        <p id="profile-feedback" class="feedback" aria-live="polite"></p>
+        <button class="primary-button" type="submit">Salvar e publicar</button>
       </form>
     </section>
   </template>
@@ -102,6 +139,8 @@
     </section>
   </template>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="/config.js" defer></script>
   <script src="/app.js" defer></script>
 </body>
 </html>
