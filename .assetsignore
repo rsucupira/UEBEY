@@ -1,0 +1,7 @@
+README.md
+package.json
+package-lock.json
+wrangler.jsonc
+.git
+.github
+node_modules
