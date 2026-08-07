@@ -3,5 +3,5 @@
 // Never put service_role or secret keys in this file.
 window.UEBEY_CONFIG = {
   supabaseUrl: 'https://gadclmppnrdjrzjoujdr.supabase.co',
-  supabasePublishableKey: ''
+  supabasePublishableKey: 'sb_publishable_VVedCWMY31tEVKzYuA9pvw_lVOZewrE'
 };
