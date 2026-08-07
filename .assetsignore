@@ -1,7 +1,10 @@
-README.md
-package.json
+.wrangler/**
+node_modules/**
+.git/**
+.github/**
+bun.lock
 package-lock.json
+package.json
 wrangler.jsonc
-.git
-.github
-node_modules
+README.md
+_redirects
