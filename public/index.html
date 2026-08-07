@@ -36,8 +36,8 @@
 
       <div class="mini-proof">
         <span>1 conta</span>
-        <span>1 endereço</span>
-        <span>1 página</span>
+        <span>seus endereços</span>
+        <span>páginas independentes</span>
       </div>
     </section>
   </template>
@@ -47,7 +47,7 @@
       <div class="section-heading">
         <p class="eyebrow" id="auth-eyebrow">SUA CONTA UEBEY</p>
         <h1 id="auth-title">Entrar</h1>
-        <p id="auth-copy">Acesse sua página e edite quando quiser.</p>
+        <p id="auth-copy">Acesse suas páginas e edite quando quiser.</p>
       </div>
 
       <form id="auth-form" class="editor-card auth-card">
@@ -59,16 +59,40 @@
         </label>
         <p id="auth-feedback" class="feedback" aria-live="polite"></p>
         <button id="auth-submit" class="primary-button" type="submit">Entrar</button>
-        <button id="auth-switch" class="text-button" type="button">Ainda não tenho conta</button>
+        <div class="auth-secondary-actions">
+          <button id="auth-switch" class="text-button" type="button">Ainda não tenho conta</button>
+          <button id="auth-forgot" class="text-button" type="button">Esqueci minha senha</button>
+          <button id="auth-resend" class="text-button" type="button" hidden>Reenviar confirmação</button>
+        </div>
+      </form>
+    </section>
+  </template>
+
+  <template id="reset-password-template">
+    <section class="editor-wrap narrow-wrap">
+      <div class="section-heading">
+        <p class="eyebrow">SEGURANÇA DA CONTA</p>
+        <h1>Nova senha</h1>
+        <p>Escolha uma nova senha para sua conta UEBEY.</p>
+      </div>
+      <form id="reset-password-form" class="editor-card auth-card">
+        <label>Nova senha
+          <input name="password" type="password" minlength="6" autocomplete="new-password" required placeholder="Mínimo 6 caracteres" />
+        </label>
+        <label>Confirmar nova senha
+          <input name="password_confirmation" type="password" minlength="6" autocomplete="new-password" required placeholder="Repita a senha" />
+        </label>
+        <p id="reset-password-feedback" class="feedback" aria-live="polite"></p>
+        <button class="primary-button" type="submit">Alterar senha</button>
       </form>
     </section>
   </template>
 
   <template id="dashboard-template">
-    <section class="editor-wrap narrow-wrap">
+    <section class="editor-wrap dashboard-wrap">
       <div class="section-heading">
         <p class="eyebrow">MINHA UEBEY</p>
-        <h1>Dashboard</h1>
+        <h1>Minhas páginas</h1>
         <p id="dashboard-email"></p>
       </div>
       <article id="dashboard-card" class="editor-card dashboard-card"></article>
@@ -78,7 +102,7 @@
   <template id="editor-template">
     <section class="editor-wrap">
       <div class="section-heading">
-        <p class="eyebrow">CRIE SUA PÁGINA</p>
+        <p class="eyebrow">SUA PÁGINA</p>
         <h1 id="editor-address"></h1>
         <p>Preencha só o essencial. Você poderá editar depois.</p>
       </div>
